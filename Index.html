@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawsome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fabric .js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+    <title>Photos Editor</title>
+  </head>
+  <body>
+    <!-- main div -->
+    <div class="main-conteners">
+      <div class="second-contener">
+        <!-- edit-menu-result -->
+        <div class="edit-menu-result">
+          <div class="effect-names">
+            <h1 class="effect-names-text">Blur</h1>
+            <div class="input-blur">
+              <span class="Process" id="BlurProgress">0%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="Blurinput"
+                max="100"
+                value="0"
+              />
+            </div>
+          </div>
+          <div class="effect-names">
+            <h1 class="effect-names-text">brightness</h1>
+            <div class="input-blur">
+              <span class="Process" id="bright-update-text">100%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="brightnesinput"
+                max="200"
+                value="100"
+              />
+            </div>
+          </div>
+          <div class="effect-names">
+            <h1 class="effect-names-text">contrast</h1>
+            <div class="input-blur">
+              <span class="Process" id="contra-filter-show-text">100%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="contrainput"
+                max="200"
+                value="100"
+              />
+            </div>
+          </div>
+          <div class="effect-names">
+            <h1 class="effect-names-text">grayscale</h1>
+            <div class="input-blur">
+              <span class="Process" id="gray-text-update">0%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="grayinput"
+                max="100"
+                value="0"
+              />
+            </div>
+          </div>
+
+          <div class="effect-names">
+            <h1 class="effect-names-text">hue-rotate</h1>
+            <div class="input-blur">
+              <span class="Process" id="hui-ro-text">0%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="hueroInput"
+                max="100"
+                value="0"
+              />
+            </div>
+          </div>
+          <div class="effect-names">
+            <h1 class="effect-names-text">invert</h1>
+            <div class="input-blur">
+              <span class="Process" id="invert-text-filter">0%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="invertinput"
+                max="100"
+                value="0"
+              />
+            </div>
+          </div>
+          <div class="effect-names">
+            <h1 class="effect-names-text">saturate</h1>
+            <div class="input-blur">
+              <span class="Process" id="saturate-text-update">100%</span>
+              <input
+                class="effect-progress"
+                type="range"
+                id="saturateinput"
+                max="200"
+                value="100"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- photo editor -->
+        <div class="Photos-editor-contener">
+          <!-- height width choose image menu -->
+          <div class="width-he-image-menu">
+            <div class="width-images">
+              <h3 class="width-text">
+                Real-Width :
+                <span class="width-text" id="update-Width">100px</span>
+              </h3>
+            </div>
+            <div class="height-images">
+              <h3 class="height-text">
+                Real-Height :
+                <span class="height-text" id="update-height">100px</span>
+              </h3>
+            </div>
+            <div class="choose-images">
+              <label for="inputFile">
+                <h3 class="height-text">choose-images</h3></label
+              >
+              <input
+                class="input-choose-images"
+                type="file"
+                id="inputFile"
+                accept="jpeg,png,jpg"
+              />
+            </div>
+            <div class="choose-images">
+              <h3 class="choose-image-text" id="downloade">
+                <a class="a" href="#">Downloade</a>
+              </h3>
+            </div>
+          </div>
+          <!-- show display image/photos -->
+          <div class="images-show">
+            <img
+              class="main-edit-photo"
+              src="/images/Rectangle 2.png"
+              alt="Edit photo.jpg"
+              id="photos-pic"
+            />
+          </div>
+          <!-- zomm rotate flip menu -->
+          <div class="zomm-flip-rotate">
+            <div class="zoom-inp-text">
+              <button class="reset" id="reset">Reset</button>
+            </div>
+            <!-- flip rotate -->
+            <div class="flip-rotate">
+              <div class="rotate" id="rotate-img">
+                <img
+                  class="rotate-img"
+                  src="/images/Process.png"
+                  alt="rotate.png"
+                />
+              </div>
+              <div class="flip-h" id="Horizontal-Flip">
+                <img
+                  class="flip-h-img"
+                  src="/images/Flip Horizontal.png"
+                  alt="rotate.png"
+                />
+              </div>
+              <div class="flip-v" id="vertical-Flip">
+                <img
+                  class="flip-v-img"
+                  src="/images/Flip Horizontal.png"
+                  alt="rotate.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Editor.js"></script>
+  </body>
+</html>
